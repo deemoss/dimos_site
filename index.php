@@ -1,0 +1,94 @@
+<html>
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:300,600' rel='stylesheet' type='text/css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
+    <title>Dimos Chatzipanteliadis</title>
+    <link href="styles.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript">
+    function spam(user, domain) {
+    	    locationstring = 'mailto:' + user + '@' + domain;
+    	    window.location = locationstring;
+    	}
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-3164135-2']);
+		_gaq.push(['_trackPageview']);
+	  
+		(function() {
+		  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+<meta name="google-site-verification" content="v8NcoOX1j_BSyDmdfCUcmGsXZE6zv5YwhlBYUHyaoo0" />
+
+</head>
+<body>
+
+	<div class="container">
+	<div id="cycler">
+		<div class="active"><p>Faro, Portugal</p><img src="wall1.jpg"/></div>
+		<div><p>Lefkada, Greece</p><img src="wall2.jpg"/></div>
+		<div><p>Solden, Austria</p><img src="wall3.jpg"/></div>
+        <div><p>Almopia, Greece</p><img src="wall4.jpg"/></div>
+	</div>
+</div>
+
+<script type="text/javascript">
+function cycleImages(){
+      var $active = $('#cycler .active');
+      var $next = ($active.next().length > 0) ? $active.next() : $('#cycler div:first');
+      $next.css('z-index',2);//move the next div up the pile
+      $active.fadeOut(800,function(){//fade out the top div
+	  	  $active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the div
+          $next.css('z-index',3).addClass('active');//make the next div the top one
+      });
+    }
+	$(document).ready(function(){
+// run every 7s
+setInterval('cycleImages()', 6000);
+})
+</script>
+	
+	
+    <!--<div id="background_cycler" >    
+    <script type="text/javascript">
+    $('#background_cycler').hide();//hide the background while the images load, ready to fade in later
+	
+	function cycleImages(){
+      var $active = $('#background_cycler .active');
+      var $next = ($('#background_cycler .active').next().length > 0) ? $('#background_cycler .active').next() : $('#background_cycler img:first');
+      $next.css('z-index',2);//move the next image up the pile
+	  $active.fadeOut(1500,function(){//fade out the top image
+	  $active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
+      $next.css('z-index',3).addClass('active');//make the next image the top one
+      });
+    }
+
+    $(window).load(function(){
+		$('#background_cycler').fadeIn(1500);//fade the background back in once all the images are loaded
+		  // run every 7s
+		  setInterval('cycleImages()', 7000);
+    })
+	
+    </script>-->
+    
+    <!--<img class="active" src="wall1.jpg" alt=""/>
+    <img src="wall2.jpg" alt=""   />
+    <img src="wall3.jpg" alt=""  />-->
+    
+    </div>
+    
+    <div class="content">
+        <p class="title">My name is <h100>Dimos Chatzipanteliadis.</h100></p>
+    
+        <p>I am an innovation delivery professional. I have been working in mobile and information technology, as a Product - Project Manager,  and an Entrepreneur. Some of my other interests include skiing, mountain biking, kite surfing and photography. I read <a href="javascript:spam('dimos', 'dimos.biz?subject=HELLO')">email</a>.</p>
+    
+    
+    <div class="linkedin"><a href="http://uk.linkedin.com/in/dimosthenis" style="text-decoration:none;"><span style="font: 60% Arial,sans-serif; color:#0783B6;"><img src="http://www.linkedin.com/img/webpromo/btn_in_20x15.png" width="20" height="15" alt="View Dimos Chatzipanteliadis's LinkedIn profile" style="vertical-align:bottom" border="0">View my profile</span></a>
+    </div>
+    
+    </div>
+</body>
+</html>

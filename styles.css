@@ -1,0 +1,60 @@
+body { 
+    /*background: #000 url('wall.jpg') 50% 0; */
+	background: #000;
+    font-family: 'Roboto', sans-serif;
+	font-weight: 100;
+	font-size:1.4em;
+    color: #fff;
+    text-shadow: #333 1px 1px 20px;
+	width: 100%;
+}
+
+img{
+	max-width: 100%;
+  	max-height: auto;
+	overflow:hidden;
+}
+
+.content {
+    width: 425px;
+    position: absolute;
+	margin: 50px auto auto 10%;
+	padding:40px;
+	z-index: 100;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.content a {
+	text-decoration: none;
+	color: #4C81DF;	
+}
+
+p.title {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300;
+    color: #FFF;
+	font-size:1.6em;
+}
+
+h100 {
+	color: #FFF;
+	font-weight: 600;
+	}
+
+.linkedin {
+    position: relative;
+	top:15px;
+}
+
+/*Background Cycler*/
+
+/*#background_cycler{padding:0;margin:0;width:100%;position:absolute;top:0;left:0;z-index:-1}
+#background_cycler img{position:absolute;left:0;top:0;width:100%;z-index:1}
+#background_cycler img.active{z-index:3}*/
+
+/*#cycler{padding:0;margin:0;width:100%;position:absolute;top:0;left:0}*/
+#cycler{position:absolute;top:0;left:0;}
+#cycler div{position:absolute;z-index:1;}
+#cycler div p{position:fixed;width:500px;bottom:5px;right:10px;color:white;font-size: 10px;text-align:right;}
+#cycler div.active{z-index:3}
+#cycler img{display:block;}
