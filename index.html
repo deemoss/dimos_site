@@ -1,58 +1,136 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>Dimos Chatzipanteliadis</title>
+    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,600" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <title>Dimos Chatzipanteliadis</title>
+    
+    <!-- jQuery (modern version) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <!-- Styles -->
     <link href="styles.css" type="text/css" rel="stylesheet">
 
+    <!-- Email anti-spam -->
     <script type="text/javascript">
         function spam(user, domain) {
             window.location = 'mailto:' + user + '@' + domain;
         }
     </script>
 
+    <!-- Google site verification -->
     <meta name="google-site-verification" content="v8NcoOX1j_BSyDmdfCUcmGsXZE6zv5YwhlBYUHyaoo0" />
-</head>
 
+    <!-- Slideshow CSS -->
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 500px; /* adjust height */
+            overflow: hidden;
+        }
+
+        #cycler div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+
+        #cycler .active {
+            display: block;
+        }
+
+        #cycler img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .title {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 100;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .linkedin img {
+            vertical-align: middle;
+        }
+
+        @media(max-width: 600px){
+            .container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
 <body>
+
+    <!-- Slideshow -->
     <div class="container">
         <div id="cycler">
-            <div class="active"><p>Faro, Portugal</p><img src="wall1.jpg"/></div>
-            <div><p>Lefkada, Greece</p><img src="wall2.jpg"/></div>
-            <div><p>Solden, Austria</p><img src="wall3.jpg"/></div>
-            <div><p>Almopia, Greece</p><img src="wall4.jpg"/></div>
+            <div class="active"><p>Faro, Portugal</p><img src="wall1.jpg" alt="Faro, Portugal"/></div>
+            <div><p>Lefkada, Greece</p><img src="wall2.jpg" alt="Lefkada, Greece"/></div>
+            <div><p>Solden, Austria</p><img src="wall3.jpg" alt="Solden, Austria"/></div>
+            <div><p>Almopia, Greece</p><img src="wall4.jpg" alt="Almopia, Greece"/></div>
         </div>
     </div>
 
+    <!-- Slideshow JS -->
     <script type="text/javascript">
-        function cycleImages(){
+        function cycleImages() {
             var $active = $('#cycler .active');
-            var $next = ($active.next().length > 0) ? $active.next() : $('#cycler div:first');
-            $next.css('z-index',2);
-            $active.fadeOut(800,function(){
-                $active.css('z-index',1).show().removeClass('active');
-                $next.css('z-index',3).addClass('active');
+            var $next = $active.next('div').length ? $active.next('div') : $('#cycler div:first');
+
+            $next.css('z-index', 2);
+            $active.fadeOut(800, function(){
+                $active.css('z-index', 1).show().removeClass('active');
+                $next.css('z-index', 3).addClass('active');
             });
         }
+
         $(document).ready(function(){
             setInterval(cycleImages, 6000);
         });
     </script>
 
+    <!-- Content Section -->
     <div class="content">
-        <p class="title">My name is <h100>Dimos Chatzipanteliadis.</h100></p>
+        <p class="title">My name is <span style="font-weight:100;">Dimos Chatzipanteliadis.</span></p>
 
-        <p>I am an innovation delivery professional. I have been working in mobile and information technology, as a Product - Project Manager, and an Entrepreneur. Some of my other interests include skiing, mountain biking, kite surfing and photography. I read <a href="javascript:spam('dimos', 'dimos.biz?subject=HELLO')">email</a>.</p>
+        <p>
+            I am an innovation delivery professional. I have been working in mobile and information technology,
+            as a Product - Project Manager, and an Entrepreneur. Some of my other interests include skiing, mountain
+            biking, kite surfing and photography. I read <a href="javascript:spam('dimos', 'dimos.biz?subject=HELLO')">email</a>.
+        </p>
 
         <div class="linkedin">
             <a href="https://uk.linkedin.com/in/dimosthenis" style="text-decoration:none;">
                 <span style="font: 60% Arial,sans-serif; color:#0783B6;">
-                    <img src="https://www.linkedin.com/img/webpromo/btn_in_20x15.png" width="20" height="15" alt="View Dimos Chatzipanteliadis's LinkedIn profile" style="vertical-align:bottom" border="0">
+                    <img src="https://www.linkedin.com/img/webpromo/btn_in_20x15.png" width="20" height="15" alt="LinkedIn">
                     View my profile
                 </span>
             </a>
         </div>
     </div>
+
 </body>
 </html>
